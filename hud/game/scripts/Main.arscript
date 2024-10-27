@@ -1,0 +1,232 @@
+extends ARMain
+
+var player
+var spawner
+var bullets: Array
+var circle_skill
+var around_skill
+var levelup_image
+var pause_image
+var timer
+
+func start():
+	player = get_ar_element("Person")
+	spawner = get_ar_element("Spawner")
+	for i in range(1, 6):
+		bullets.append(get_ar_element("Bullet" + str(i)))
+	circle_skill = get_ar_element("CircleSkill")
+	around_skill = get_ar_element("AroundSkill")
+	levelup_image = get_ar_element("LevelupImage")
+	pause_image = get_ar_element("PauseImage")
+	timer = get_ar_element("Timer")
+	set_pause(true)
+	player.start()
+	spawner.start()
+	around_skill.start()
+	circle_skill.start()
+	timer.start()
+	
+	# api('subscribe_to', 'speedometer', 'on_speedometer_changed')
+	api("connect_to_swp_app", {
+		"target_node" : self,
+		"on_message" : "on_message",
+		"on_error": "on_error"
+	})
+
+func on_error(message):
+	api("out", "ERROR: " + message)
+
+func on_message(message):
+	if message["type"] == "state":
+		if message["value"] == "pause":
+			set_pause(true)
+		if message["value"] == "resume":
+			set_pause(false)
+		if message["value"] == "start":
+			start_game()
+		if message["value"] == "stop":
+			stop_game()
+	if message["type"] == "card_info":
+		use_card(message["id"])
+	if message["type"] == "attack":
+		use_attack()
+	api("out", "Message: " + str(message))
+
+func use_attack():
+	player.attack()
+
+func set_pause(value: bool):
+	if not levelup_image.visibility:
+		pause_image.visibility = value
+	player.set_pause(value)
+	spawner.set_pause(value)
+	for bullet in bullets:
+		bullet.set_pause(value)
+	circle_skill.set_pause(value)
+	around_skill.set_pause(value)
+	timer.set_pause(value)
+
+func start_game():
+	set_pause(false)
+
+func stop_game():
+	set_pause(true)
+
+func on_speedometer_changed(data : String):
+	if float(data) > 10.0:
+		set_pause(true)
+	else:
+		set_pause(false)
+
+func use_card(id_s: String):
+	var id = int(id_s)
+	match id:
+		101:
+			var percentile = 20
+			increase_speed_shot(percentile)
+		102:
+			var percentile = 20
+			increase_speed_shot(percentile)
+		105:
+			var percentile = 20
+			increase_speed_bullet(percentile)
+		106:
+			var percentile = 20
+			increase_speed_bullet(percentile)
+		109:
+			var percentile = 20
+			increase_size_bullet(percentile)
+		110:
+			var percentile = 20
+			increase_size_bullet(percentile)
+		200:
+			show_1_sphere()
+		201:
+			var percentile = 20
+			increase_speed_and_radius_sphere(percentile)
+		202:
+			var percentile = 20
+			increase_speed_and_radius_sphere(percentile)
+		204:
+			show_2_sphere()
+		205:
+			show_4_sphere()
+		300:
+			show_circle()
+		301:
+			var percentile = 20
+			increase_radius_cirlce(percentile)
+		302:
+			var percentile = 20
+			increase_radius_cirlce(percentile)
+		304:
+			var percentile = 20
+			increase_firerate_circle(percentile)
+		305:
+			var percentile = 20
+			increase_firerate_circle(percentile)
+		600:
+			var percentile = 20
+			var time = 10
+			increase_firerate_of_all_skills(percentile, time)
+		601:
+			var percentile = 20
+			var time = 10
+			increase_firerate_of_all_skills(percentile, time)
+		602:
+			var percentile = 20
+			var time = 10
+			increase_firerate_of_all_skills(percentile, time)
+		700:
+			var percentile = 20
+			var time = 10
+			decrease_speed_of_all_enemies(percentile, time)
+		701:
+			var percentile = 30
+			var time = 10
+			decrease_speed_of_all_enemies(percentile, time)
+		702:
+			var percentile = 30
+			var time = 15
+			decrease_speed_of_all_enemies(percentile, time)
+		800:
+			var percentile = 100
+			restore_health(percentile)
+		801:
+			var percentile = 100
+			restore_health(percentile)
+		802:
+			var percentile = 100
+			restore_health(percentile)
+		900:
+			var percentile = 20
+			increase_max_health(percentile)
+		901:
+			var percentile = 20
+			increase_max_health(percentile)
+		902:
+			var percentile = 20
+			increase_max_health(percentile)
+	set_pause(false)
+	levelup_image.visibility = false
+
+func increase_speed_shot(percentile):
+	player.shoot_delay -= player.shoot_delay * percentile / 100
+
+func increase_speed_bullet(percentile):
+	for bullet in bullets:
+		bullet.speed += bullet.speed * percentile / 100
+
+func increase_size_bullet(percentile):
+	for bullet in bullets:
+		bullet.height += bullet.height * percentile / 100
+		bullet.width += bullet.width * percentile / 100
+
+func show_1_sphere():
+	around_skill.current_level = 1
+	around_skill.set_level()
+
+func show_2_sphere():
+	around_skill.current_level = 2
+	around_skill.set_level()
+
+func show_4_sphere():
+	around_skill.current_level = 3
+	around_skill.set_level()
+
+func increase_speed_and_radius_sphere(percentile):
+	around_skill.increase_speed_and_radius(percentile)
+
+func show_circle():
+	circle_skill.current_level = 1
+	circle_skill.set_level()
+
+func increase_radius_cirlce(percentile):
+	circle_skill.height += circle_skill.height * percentile / 100
+	circle_skill.width += circle_skill.width * percentile / 100
+	circle_skill.top = 420 - circle_skill.height / 2
+	circle_skill.left = 910 - circle_skill.width / 2
+
+func increase_firerate_circle(percentile):
+	circle_skill.firerate -= circle_skill.firerate * percentile / 100
+	if circle_skill.firerate < 0.2:
+		circle_skill.firerate = 0.2
+
+func increase_firerate_of_all_skills(percentile, time):
+	player.timer_of_increase = time 
+	player.percentile_of_increase = percentile
+	
+	circle_skill.timer_of_increase = time 
+	circle_skill.percentile_of_increase = percentile
+	
+	around_skill.timer_of_increase = time 
+	around_skill.percentile_of_increase = percentile
+
+func decrease_speed_of_all_enemies(percentile, time):
+	spawner.decrease_speed_of_all_enemies(percentile, time)
+
+func restore_health(percentile):
+	player.change_health(player.max_health)
+
+func increase_max_health(percentile):
+	player.change_max_health(player.max_health + player.max_health * percentile / 100)

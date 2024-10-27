@@ -1,0 +1,54 @@
+extends ARGroup
+
+var current_level = 0
+
+var spheres: Array
+var pause: bool = false
+
+var timer_of_increase = 0
+var percentile_of_increase = 0
+
+func start():
+	spheres.append(get_ar_element("Sphere1"))
+	spheres.append(get_ar_element("Sphere2"))
+	spheres.append(get_ar_element("Sphere3"))
+	spheres.append(get_ar_element("Sphere4"))
+	
+	set_level()
+
+func set_level():
+	if current_level == 0:
+		for sphere in spheres:
+			sphere.kill()
+	if current_level >= 1:
+		spheres[0].spawn(1)
+	if current_level >= 2:
+		spheres[1].spawn(3)
+	if current_level >= 3:
+		spheres[2].spawn(2)
+		spheres[3].spawn(4)
+	
+func set_pause(value: bool):
+	pause = value
+	for i in range(4):
+		spheres[i].set_pause(value)
+		
+func update_process(delta: float):
+	increase_skills(delta)
+		
+func increase_speed_and_radius(percentile: int):
+	for sphere in spheres:
+		sphere.add_radius(sphere.radius * percentile / 100)
+		
+func decrease_speed_and_radius(percentile: int):
+	for sphere in spheres:
+		sphere.add_radius(-(sphere.radius * percentile / (100+percentile)))
+		
+func increase_skills(delta: float) -> void:
+	if timer_of_increase == 10:
+		increase_speed_and_radius(percentile_of_increase)
+	if timer_of_increase > 0:
+		timer_of_increase -= delta
+	else:
+		decrease_speed_and_radius(percentile_of_increase)
+		percentile_of_increase = 0

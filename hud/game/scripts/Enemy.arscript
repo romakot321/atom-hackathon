@@ -1,0 +1,163 @@
+extends AROverlap
+
+var damage: float = 5.0
+var health: float = 1.0
+var speed: int = 200
+var reward: int = 5
+var move_sleep_time = 0.2
+var distance_to_player: float
+var min_spawn_radius: float = 400.0
+var active: bool = false
+var start_size: Vector2
+
+var rng = RandomNumberGenerator.new()
+var player
+var image
+var freeze_image
+var playerVector: Vector2
+var spawnpoints: Array
+var moveSleep: float
+var pause: bool = false
+var fps: float = 10
+var frame_time: float = 0
+
+var timer_of_increase = 0
+var percentile_of_increase = 0
+var const_time_of_increase = 10
+
+var category_to_info = {
+	0: {
+		"health": 1.0,
+		"speed": 200,
+		"damage": 5.0,
+		"reward": 5,
+		"image": "images/mob_small.png"
+	},
+	1: {
+		"health": 2.0,
+		"speed": 100,
+		"damage": 10.0,
+		"reward": 10,
+		"image": "images/mob_big.png"
+	},
+	2: {
+		"health": 50.0,
+		"speed": 10,
+		"damage": 1000000.0,
+		"reward": 0,
+		"image": "images/mob_boss.png"
+	},
+}
+
+func start():
+	rng.randomize()
+	
+	player = get_ar_element("Main/Person")
+	image = get_ar_element("ARImage")
+	freeze_image = get_ar_element("Main/FreezeImage")
+	playerVector = Vector2(player.left + 200, player.top + 300)
+	start_size = Vector2(self.width, self.height)
+	self.visibility = false
+
+func animate(delta: float):
+	if frame_time >= 1.0 / fps:
+		var frame_num: int = image.frame_coord.x
+		frame_num += 1
+		if frame_num >= image.h_frames:
+			frame_num = 0
+		frame_time = 0.0
+		image.frame_coord = Vector2(frame_num, 0)
+	frame_time += delta
+
+func change_size(width, height):
+	self.width = width
+	self.height = height
+	self.image.width = width
+	self.image.height = height
+	self.image.left = 0
+	self.image.top = 0
+
+func update_process(delta: float) -> void:
+	if not self.visibility or pause:
+		return
+	animate(delta)
+	decrease_speed(delta)
+	if moveSleep > 0.0:
+		moveSleep -= delta
+		if moveSleep - delta < 0:
+			active = true
+		change_size(start_size.x * 2 + int(start_size.x * moveSleep / move_sleep_time + 1), start_size.y * 2 + int(start_size.y * moveSleep / move_sleep_time + 1))
+		return
+	var vector = Vector2(self.left, self.top)
+	vector = vector.move_toward(playerVector, delta * self.speed)
+	self.left = vector.x
+	self.top = vector.y
+	distance_to_player = vector.distance_to(playerVector)
+	
+func decrease_speed(delta: float):
+	if timer_of_increase == const_time_of_increase:
+		self.speed -= self.speed * percentile_of_increase / 100
+		if self.speed < 1:
+			self.speed = 1
+		freeze_image.visibility = true
+	if timer_of_increase > 0:
+		timer_of_increase -= delta
+	else:
+		self.speed = self.speed * 100 / (100 - percentile_of_increase)
+		percentile_of_increase = 0
+
+func overlap_start(ar_element):
+	if pause:
+		return
+	if ar_element.name == "Person":
+		ar_element.change_health(-self.damage)
+		kill()
+
+func change_health(value: float):
+	health += value
+	api("out", "Take damage " + str(value) + " , now: " + str(health))
+	if health <= 0.0:
+		kill()
+
+func kill():
+	player.change_exp(self.reward)
+	self.visibility = false
+	self.left = -100
+	self.top = -100
+	active = false
+	self.health = 0.0
+
+func _generate_position(category: int) -> Vector2:
+	if category == 2:
+		return Vector2(90, 420)
+	var pos = Vector2(rng.randi_range(100, 1720), rng.randi_range(100, 740))
+	var dist = pos.distance_to(playerVector)
+	if dist < min_spawn_radius:
+		pos -= pos.direction_to(playerVector) * 500
+	if pos.y < 0:
+		pos.y = 0
+	if pos.y > 840:
+		pos.y = 840
+	if pos.x < 0:
+		pos.x = 0
+	if pos.x > 1800:
+		pos.x = 1800
+	return pos
+
+func spawn(category: int):
+	var pos = _generate_position(category)
+	var info = category_to_info[category]
+	
+	self.left = pos.x
+	self.top = pos.y
+	self.health = info["health"]
+	self.damage = info["damage"]
+	self.speed = info["speed"]
+	self.reward = info["reward"]
+	self.image.set_image(get_resource(info["image"]))
+	self.image.h_frames = 4
+	moveSleep = move_sleep_time
+	self.visibility = true
+
+func set_pause(value: bool):
+	pause = value

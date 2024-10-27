@@ -1,0 +1,8 @@
+extends AROverlap
+
+var health_up: float = 3.0
+
+func overlap_start(ar_element: AROverlap) -> void:
+	if ar_element.name == "Dwarf":
+		ar_element.change_health(health_up)
+		delete()

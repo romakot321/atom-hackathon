@@ -1,0 +1,15 @@
+extends ARImage
+
+var to_up: bool = false
+
+func update_process(delta: float):
+  if not self.visibility:
+    return
+  if self.paint.a <= 0.2:
+    to_up = true
+  if self.paint.a >= 0.9:
+    to_up = false
+  if to_up:
+    self.paint.a += 0.005
+  else:
+    self.paint.a -= 0.005

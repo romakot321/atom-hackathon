@@ -1,0 +1,58 @@
+extends AROverlap
+
+var h_w = Vector2(100, 100)
+var radius = 250
+var person
+var center
+var image
+var pause: bool = false
+
+var time_for_circle = 5.0
+var current_time = 0.0
+
+var damage: float = 1.0
+
+func start():
+	self.visible = true
+	self.width = h_w.x
+	self.height = h_w.y
+	
+	person = get_ar_element("Main/Person")
+	center = Vector2(person.top + 75, person.left + 75)
+	image = get_ar_element("ARImage")
+	self.visible = false
+
+
+func update_process(delta: float):
+	if not self.visibility or pause:
+		return
+	current_time += delta
+	get_position_on_circle(current_time)
+
+func get_position_on_circle(time: float):
+	var angular_velocity = 2 * PI / time_for_circle
+	var angle = angular_velocity * time
+	self.top = center.x + radius * cos(angle)
+	self.left = center.y + radius * sin(angle)
+
+func spawn(sphere_num: int):
+	current_time = sphere_num * time_for_circle/4
+	self.visible = true
+
+func kill():
+	self.visible = false
+
+func overlap_start(ar_element):
+	if not self.visibility or pause:
+		return
+	if not ar_element.name.begins_with("Enemy") and ar_element.name != "Boss":
+		return
+	ar_element.change_health(-damage)
+
+func set_pause(value: bool):
+	pause = value
+
+func add_radius(value: int):
+	radius += value
+	image.width = self.width
+	image.height  = self.height

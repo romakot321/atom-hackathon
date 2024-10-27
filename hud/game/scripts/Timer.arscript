@@ -1,0 +1,54 @@
+extends ARLabel
+
+var seconds: float
+var pause: bool = true
+var is_red: bool = false
+var color_change_timer: float = 1.0
+
+func start():
+	seconds = 0.0
+
+func set_pause(value: bool):
+	pause = value
+
+func check_color_change(delta: float):
+	color_change_timer -= delta
+	if color_change_timer > 0:
+		return
+	color_change_timer = 1.0
+	if seconds >= 130:
+		is_red = false
+	elif seconds >= 120:
+		is_red = not is_red
+	elif seconds >= 70:
+		is_red = false
+	elif seconds >= 60:
+		is_red = not is_red
+	elif seconds >= 10:
+		is_red = false
+	elif seconds > 0:
+		is_red = not is_red
+	else:
+		is_red = false
+	
+	if is_red:
+		self.self_paint = Color.red
+	else:
+		self.self_paint = Color.yellow
+
+func update_text():
+	if seconds < 0:
+		self.text = ""
+		return
+	var minutes_text = '0' + str(int(seconds / 60))
+	var seconds_text = str(int(seconds) % 60)
+	if int(seconds) % 60 < 10:
+		seconds_text = '0' + seconds_text
+	self.text = minutes_text + ':' + seconds_text
+
+func update_process(delta: float):
+	if pause:
+		return
+	seconds -= delta
+	update_text()
+	check_color_change(delta)

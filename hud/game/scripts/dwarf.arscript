@@ -1,0 +1,145 @@
+extends AROverlap
+
+var shoot_timer: float
+var shoot_delay: float = 0.75
+var fps: float = 1
+var frame_time: float = 0
+
+var sprite: ARImage
+var health_bar: ARProgressBar
+var skill_bar: ARProgressBar
+var exp_bar: ARProgressBar
+var spawner
+var image
+var bullets: Array
+var levelup_image
+var a
+var pause: bool = false
+
+var health: float
+var level: int = 1
+var player_exp: int
+var exp_for_levelup = 10
+var max_health: float = 100.0
+
+var timer_of_increase = 0
+var percentile_of_increase = 0
+
+var exp_for_levelup_table = {
+	2: 10, 3: 30, 4: 50, 5: 100,
+	6: 150, 7: 250, 8: 450, 9: 900,
+	10: 1500
+}
+
+
+func start() -> void:
+	sprite = get_ar_element("ARImage")
+	health_bar = get_ar_element("HealthBar")
+	skill_bar = get_ar_element("BuffBar")
+	exp_bar = get_ar_element("Main/ExpBar")
+	spawner = get_ar_element("Main/Spawner")
+	image = get_ar_element("ARImage")
+	levelup_image = get_ar_element("Main/LevelupImage")
+	a = get_ar_element("Main")
+	for i in range(1, 9):
+		bullets.append(get_ar_element("Main/Bullet" + str(i)))
+	
+	change_health(max_health)
+	change_exp(0)
+
+func shoot(delta: float):
+	shoot_timer -= delta
+	if shoot_timer > 0:
+		return
+	shoot_timer = shoot_delay
+	var enemy = spawner.get_nearest_to_player_enemy()
+	if enemy == null:
+		return
+	var point_at = Vector2(enemy.left, enemy.top - 70)
+
+	for bullet in bullets:
+		if bullet.visibility:
+			continue
+		bullet.spawn(point_at)
+		break
+
+func attack():
+	var points: Array = [
+		Vector2(0, 0),
+		Vector2(1820, 0),
+		Vector2(1820, 840),
+		Vector2(0, 840),
+		Vector2(910, 0),
+		Vector2(910, 840),
+		Vector2(0, 420),
+		Vector2(1820, 420),
+	]
+	for point in points:
+		for bullet in bullets:
+			if bullet.visibility:
+				continue
+			bullet.spawn(point)
+			break
+
+func animate(delta: float):
+	if frame_time >= 1.0 / fps:
+		var frame_num: int = image.frame_coord.x
+		frame_num += 1
+		if frame_num >= image.h_frames:
+			frame_num = 0
+		frame_time = 0.0
+		image.frame_coord = Vector2(frame_num, 0)
+	frame_time += delta
+
+func update_process(delta: float) -> void:
+	if pause:
+		return
+	animate(delta)
+	shoot(delta)
+	increase_skills(delta)
+
+func increase_skills(delta: float) -> void:
+	if timer_of_increase == 10:
+		shoot_delay -= shoot_delay * percentile_of_increase / 100
+		skill_bar.visibility = true
+	if timer_of_increase > 0:
+		timer_of_increase -= delta
+		skill_bar.current_percent = timer_of_increase / 10.0 * 100
+	else:
+		shoot_delay -= shoot_delay * percentile_of_increase / (100 + percentile_of_increase)
+		percentile_of_increase = 0
+		skill_bar.visibility = false
+
+func change_health(value: float) -> void:
+	health += value
+	if health > max_health:
+		health = max_health
+	health_bar.current_percent = health / max_health * 100
+	
+	api("send_to_swp_app", {"type": "health", "value": str(int(health))})
+
+func change_max_health(value: float) -> void:
+	var diff = max_health - health
+	max_health = value
+	health = max_health - diff
+	health_bar.current_percent = health / max_health * 100
+	api("send_to_swp_app", {"type": "health", "value": str(int(health))})
+
+
+func levelup():
+	player_exp = 0
+	level += 1
+	exp_for_levelup = exp_for_levelup_table[level + 1]
+	levelup_image.visibility = true
+	a.set_pause(true)
+
+
+func change_exp(value: int):
+	player_exp += value
+	exp_bar.current_percent = float(player_exp) / float(exp_for_levelup) * 100
+	api("send_to_swp_app", {"type": "exp", "value": str(player_exp)})
+	if player_exp >= exp_for_levelup:
+		levelup()
+
+func set_pause(value: bool):
+	pause = value

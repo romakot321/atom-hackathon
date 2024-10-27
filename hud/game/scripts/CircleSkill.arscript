@@ -1,0 +1,88 @@
+extends AROverlap
+
+var firerate: float = 2.0
+var attack_timeout: float
+var attack_duration: float
+var damage: float = 0.0
+var pause: bool = false
+var fps: float = 20
+var frame_time: float = 0
+var image
+
+var current_level = 0
+
+var timer_of_increase = 0
+var percentile_of_increase = 0
+var const_time_of_increase = 10
+
+func start():
+	self.top = -500
+	self.left = -500
+	image = get_ar_element("ARImage")
+	current_level = 0
+	set_level()
+
+func animate(delta: float):
+	if frame_time >= 1.0 / fps:
+		var frame_num: int = image.frame_coord.x
+		frame_num += 1
+		if frame_num >= image.h_frames:
+			frame_num = 0
+		frame_time = 0.0
+		image.frame_coord = Vector2(frame_num, 0)
+	frame_time += delta
+
+func update_process(delta: float):
+	if pause:
+		return
+	animate(delta)
+	if attack_duration > 0:
+		attack_duration -= delta
+		return
+	else:
+		self.visibility = false
+
+	attack_timeout -= delta
+	if attack_timeout < 0.0:
+		attack_timeout = firerate
+		attack_duration = 0.15
+		self.visibility = true
+		image.frame_coord = Vector2(0, 0)
+	increase_skills(delta)
+	
+	
+func increase_skills(delta: float) -> void:
+	if timer_of_increase == const_time_of_increase:
+		firerate -= firerate * percentile_of_increase / 100
+		if firerate < 0.2:
+			firerate = 0.2
+	if timer_of_increase > 0:
+		timer_of_increase -= delta
+	else:
+		firerate = firerate * 100 / (100 - percentile_of_increase)
+		percentile_of_increase = 0
+
+func overlap_start(ar_element):
+	if not self.visibility or pause or current_level == 0:
+		return
+	if not ar_element.name.begins_with("Enemy"):
+		return
+	ar_element.change_health(-damage)
+
+func set_pause(value: bool):
+	pause = value
+
+func set_level():
+	if current_level == 0:
+		self.visibility = true
+	if current_level >= 1:
+		self.visibility = true
+		self.height = 400
+		self.width = 400
+		self.damage = 1.0
+		self.top = 420 - self.height / 2
+		self.left = 910 - self.width / 2
+	if current_level >= 2:
+		pass
+	if current_level >= 3:
+		pass

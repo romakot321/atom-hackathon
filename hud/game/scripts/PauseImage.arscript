@@ -1,0 +1,21 @@
+extends ARImage
+
+var to_up: bool = false
+var levelup_image
+
+func start():
+	levelup_image = get_ar_element("Main/LevelupImage")
+
+func update_process(delta: float):
+	if levelup_image.visibility:
+		self.visibility = false
+	if not self.visibility:
+		return
+	if self.paint.a <= 0.75:
+		to_up = true
+	if self.paint.a >= 0.9:
+		to_up = false
+	if to_up:
+		self.paint.a += 0.001
+	else:
+		self.paint.a -= 0.001

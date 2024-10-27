@@ -1,0 +1,49 @@
+extends AROverlap
+
+var move_vector: Vector2
+var speed: int = 1200
+var move_to: Vector2
+var playerPos = Vector2(782 + 64, 292 + 80)
+var damage: float = 1.0
+var pause: bool = false
+
+func start():
+	self.visibility = false
+
+func check_clear():
+	if self.left < 0 or self.left > 1820 or self.top < 0 or self.top > 840:
+		kill()
+
+func update_process(delta: float):
+	if not self.visibility or pause:
+		return
+	var pos = Vector2(self.left, self.top)
+	pos = pos.move_toward(move_to, delta * speed)
+	self.left = pos.x
+	self.top = pos.y
+	check_clear()
+	
+func spawn(point_at: Vector2):
+	self.left = playerPos.x
+	self.top = playerPos.y
+	var pos = Vector2(self.left, self.top)
+	point_at = pos.direction_to(point_at)
+	point_at *= 5000
+	move_to = point_at
+	self.visibility = true
+
+func kill():
+	self.visibility = false
+	self.left = -100
+	self.top = -100
+	
+func overlap_start(ar_element):
+	if not self.visibility or pause:
+		return
+	if not ar_element.name.begins_with("Enemy") and ar_element.name != "Boss":
+		return
+	ar_element.change_health(-damage)
+	kill()
+
+func set_pause(value: bool):
+	pause = value
