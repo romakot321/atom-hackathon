@@ -1,0 +1,634 @@
+Godot Engine v3.5.stable.official.991bb6ac7 - https://godotengine.org
+OpenGL ES 2.0 Renderer: AMD Radeon(TM) Graphics
+ 
+[System] Connect to HUD App from SWP App
+[System] Connected to Builder!
+{data:2826293221, message_type:ping}
+timer
+timer
+timer
+timer
+{data:0, message_type:server_state}
+timer
+{data:1, message_type:server_state}
+{data:2826293221, message_type:ping}
+timer
+timer
+{data:Null, message_type:apps_connected}
+[System] App connected.
+Connected to HUD!
+{data:{"type":"health","value":"100"}, message_type:message}
+scene_current_tag: start
+on_message(): {type:health, value:100}
+{data:{"type":"exp","value":"0"}, message_type:message}
+scene_current_tag: start
+on_message(): {type:exp, value:0}
+{data:{"type":"health","value":"100"}, message_type:message}
+scene_current_tag: start
+on_message(): {type:health, value:100}
+{data:{"type":"exp","value":"0"}, message_type:message}
+scene_current_tag: start
+on_message(): {type:exp, value:0}
+{data:{api:True, local_system:True, remote_system:True, telemetry:False}, message_type:log_filter}
+timer
+timer
+Button start pressed!
+game scene is created!
+_on_health_changed()!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+_on_health_changed()!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+timer
+{data:{"type":"health","value":"95"}, message_type:message}
+scene_current_tag: game
+on_message(): {type:health, value:95}
+emitting health changed
+_on_health_changed()!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+{data:{"type":"exp","value":"5"}, message_type:message}
+scene_current_tag: game
+on_message(): {type:exp, value:5}
+we are emitting signal of exp!!!!!!!!!!!!!!!!!!!!!!!1
+_on_exp_changed()!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+{data:{"type":"health","value":"90"}, message_type:message}
+scene_current_tag: game
+on_message(): {type:health, value:90}
+emitting health changed
+_on_health_changed()!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+{data:{"type":"exp","value":"10"}, message_type:message}
+scene_current_tag: game
+on_message(): {type:exp, value:10}
+card 1 generated
+card 2 generated
+card 3 generated
+[{description:Уменьшить скорость врагов, id:702, name:Пониженная температура, tag:freeze, type:buff}, {description:Увеличить частоту всех эффектов, id:600, name:Квантовые ускорения, tag:firerate, type:buff}, {description:Увеличить максимальное здоровье, id:902, name:Увеличение массы, tag:health, type:buff}]
+ 
+ 
+WARNING: Loaded resource as image file, this will not work on export: 'res://assets/cards/icons/icon702.png'. Instead, import the image file as an Image resource and load it normally as a resource.
+   at: load (core/image.cpp:2063) - Loaded resource as image file, this will not work on export: 'res://assets/cards/icons/icon702.png'. Instead, import the image file as an Image resource and load it normally as a resource.
+texture[ImageTexture:1662]
+WARNING: Loaded resource as image file, this will not work on export: 'res://assets/cards/icons/icon600.png'. Instead, import the image file as an Image resource and load it normally as a resource.
+   at: load (core/image.cpp:2063) - Loaded resource as image file, this will not work on export: 'res://assets/cards/icons/icon600.png'. Instead, import the image file as an Image resource and load it normally as a resource.
+texture[ImageTexture:1664]
+WARNING: Loaded resource as image file, this will not work on export: 'res://assets/cards/icons/icon902.png'. Instead, import the image file as an Image resource and load it normally as a resource.
+   at: load (core/image.cpp:2063) - Loaded resource as image file, this will not work on export: 'res://assets/cards/icons/icon902.png'. Instead, import the image file as an Image resource and load it normally as a resource.
+texture[ImageTexture:1666]
+timer
+timer
+ERROR: Index p_index = -1 is out of bounds (size() = 28).
+   at: remove (./core/cowdata.h:158) - Index p_index = -1 is out of bounds (size() = 28).
+game scene is created!
+_on_health_changed()!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+_on_health_changed()!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+{data:{"type":"health","value":"110"}, message_type:message}
+scene_current_tag: game
+on_message(): {type:health, value:110}
+emitting health changed
+_on_health_changed()!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+_on_health_changed()!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+{data:{"type":"exp","value":"5"}, message_type:message}
+scene_current_tag: game
+on_message(): {type:exp, value:5}
+we are emitting signal of exp!!!!!!!!!!!!!!!!!!!!!!!1
+_on_exp_changed()!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+_on_exp_changed()!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+{data:{"type":"health","value":"105"}, message_type:message}
+scene_current_tag: game
+on_message(): {type:health, value:105}
+emitting health changed
+_on_health_changed()!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+_on_health_changed()!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+{data:{"type":"exp","value":"10"}, message_type:message}
+scene_current_tag: game
+on_message(): {type:exp, value:10}
+we are emitting signal of exp!!!!!!!!!!!!!!!!!!!!!!!1
+_on_exp_changed()!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+_on_exp_changed()!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+{data:{"type":"health","value":"100"}, message_type:message}
+scene_current_tag: game
+on_message(): {type:health, value:100}
+emitting health changed
+_on_health_changed()!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+_on_health_changed()!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+{data:{"type":"exp","value":"15"}, message_type:message}
+scene_current_tag: game
+on_message(): {type:exp, value:15}
+we are emitting signal of exp!!!!!!!!!!!!!!!!!!!!!!!1
+_on_exp_changed()!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+_on_exp_changed()!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+timer
+{data:{"type":"exp","value":"20"}, message_type:message}
+scene_current_tag: game
+on_message(): {type:exp, value:20}
+we are emitting signal of exp!!!!!!!!!!!!!!!!!!!!!!!1
+_on_exp_changed()!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+_on_exp_changed()!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+{data:{"type":"exp","value":"25"}, message_type:message}
+scene_current_tag: game
+on_message(): {type:exp, value:25}
+we are emitting signal of exp!!!!!!!!!!!!!!!!!!!!!!!1
+_on_exp_changed()!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+_on_exp_changed()!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+{data:{"type":"exp","value":"30"}, message_type:message}
+scene_current_tag: game
+on_message(): {type:exp, value:30}
+card 1 generated
+card 2 generated
+card 3 generated
+[{description:Восстановить здоровье, id:800, name:Поглощение енергии, tag:heal, type:buff}, {description:Уменьшить скорость врагов, id:702, name:Пониженная температура, tag:freeze, type:buff}, {description:Увеличить частоту всех эффектов, id:601, name:Квантовые ускорения, tag:firerate, type:buff}]
+ 
+ 
+WARNING: Loaded resource as image file, this will not work on export: 'res://assets/cards/icons/icon800.png'. Instead, import the image file as an Image resource and load it normally as a resource.
+   at: load (core/image.cpp:2063) - Loaded resource as image file, this will not work on export: 'res://assets/cards/icons/icon800.png'. Instead, import the image file as an Image resource and load it normally as a resource.
+texture[ImageTexture:2270]
+WARNING: Loaded resource as image file, this will not work on export: 'res://assets/cards/icons/icon702.png'. Instead, import the image file as an Image resource and load it normally as a resource.
+   at: load (core/image.cpp:2063) - Loaded resource as image file, this will not work on export: 'res://assets/cards/icons/icon702.png'. Instead, import the image file as an Image resource and load it normally as a resource.
+texture[ImageTexture:2272]
+WARNING: Loaded resource as image file, this will not work on export: 'res://assets/cards/icons/icon601.png'. Instead, import the image file as an Image resource and load it normally as a resource.
+   at: load (core/image.cpp:2063) - Loaded resource as image file, this will not work on export: 'res://assets/cards/icons/icon601.png'. Instead, import the image file as an Image resource and load it normally as a resource.
+texture[ImageTexture:2274]
+{data:{"type":"exp","value":"5"}, message_type:message}
+scene_current_tag: cards
+on_message(): {type:exp, value:5}
+{data:{"type":"exp","value":"10"}, message_type:message}
+scene_current_tag: cards
+on_message(): {type:exp, value:10}
+timer
+ERROR: Index p_index = -1 is out of bounds (size() = 28).
+   at: remove (./core/cowdata.h:158) - Index p_index = -1 is out of bounds (size() = 28).
+game scene is created!
+_on_health_changed()!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+_on_health_changed()!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+_on_health_changed()!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+{data:{"type":"exp","value":"15"}, message_type:message}
+scene_current_tag: game
+on_message(): {type:exp, value:15}
+we are emitting signal of exp!!!!!!!!!!!!!!!!!!!!!!!1
+_on_exp_changed()!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+_on_exp_changed()!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+_on_exp_changed()!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+{data:{"type":"exp","value":"20"}, message_type:message}
+scene_current_tag: game
+on_message(): {type:exp, value:20}
+we are emitting signal of exp!!!!!!!!!!!!!!!!!!!!!!!1
+_on_exp_changed()!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+_on_exp_changed()!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+_on_exp_changed()!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+{data:{"type":"exp","value":"25"}, message_type:message}
+scene_current_tag: game
+on_message(): {type:exp, value:25}
+we are emitting signal of exp!!!!!!!!!!!!!!!!!!!!!!!1
+_on_exp_changed()!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+_on_exp_changed()!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+_on_exp_changed()!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+{data:{"type":"exp","value":"30"}, message_type:message}
+scene_current_tag: game
+on_message(): {type:exp, value:30}
+we are emitting signal of exp!!!!!!!!!!!!!!!!!!!!!!!1
+_on_exp_changed()!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+_on_exp_changed()!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+_on_exp_changed()!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+{data:{"type":"exp","value":"35"}, message_type:message}
+scene_current_tag: game
+on_message(): {type:exp, value:35}
+we are emitting signal of exp!!!!!!!!!!!!!!!!!!!!!!!1
+_on_exp_changed()!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+_on_exp_changed()!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+_on_exp_changed()!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+{data:{"type":"exp","value":"40"}, message_type:message}
+scene_current_tag: game
+on_message(): {type:exp, value:40}
+we are emitting signal of exp!!!!!!!!!!!!!!!!!!!!!!!1
+_on_exp_changed()!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+_on_exp_changed()!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+_on_exp_changed()!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+{data:{"type":"exp","value":"45"}, message_type:message}
+scene_current_tag: game
+on_message(): {type:exp, value:45}
+we are emitting signal of exp!!!!!!!!!!!!!!!!!!!!!!!1
+_on_exp_changed()!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+_on_exp_changed()!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+_on_exp_changed()!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+timer
+{data:{"type":"exp","value":"50"}, message_type:message}
+scene_current_tag: game
+on_message(): {type:exp, value:50}
+card 1 generated
+card 2 generated
+card 3 generated
+[{description:Увеличить скорость пуль, id:105, name:Положительный заряд, tag:shot, type:upgrade}, {description:Урон вокруг атома, id:200, name:Электронное поле, tag:aroud, type:skill}, {description:Восстановить здоровье, id:802, name:Поглощение енергии, tag:heal, type:buff}]
+ 
+ 
+WARNING: Loaded resource as image file, this will not work on export: 'res://assets/cards/icons/icon105.png'. Instead, import the image file as an Image resource and load it normally as a resource.
+   at: load (core/image.cpp:2063) - Loaded resource as image file, this will not work on export: 'res://assets/cards/icons/icon105.png'. Instead, import the image file as an Image resource and load it normally as a resource.
+texture[ImageTexture:2752]
+WARNING: Loaded resource as image file, this will not work on export: 'res://assets/cards/icons/icon200.png'. Instead, import the image file as an Image resource and load it normally as a resource.
+   at: load (core/image.cpp:2063) - Loaded resource as image file, this will not work on export: 'res://assets/cards/icons/icon200.png'. Instead, import the image file as an Image resource and load it normally as a resource.
+texture[ImageTexture:2754]
+WARNING: Loaded resource as image file, this will not work on export: 'res://assets/cards/icons/icon802.png'. Instead, import the image file as an Image resource and load it normally as a resource.
+   at: load (core/image.cpp:2063) - Loaded resource as image file, this will not work on export: 'res://assets/cards/icons/icon802.png'. Instead, import the image file as an Image resource and load it normally as a resource.
+texture[ImageTexture:2756]
+ERROR: Index p_index = -1 is out of bounds (size() = 28).
+   at: remove (./core/cowdata.h:158) - Index p_index = -1 is out of bounds (size() = 28).
+game scene is created!
+_on_health_changed()!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+_on_health_changed()!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+_on_health_changed()!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+_on_health_changed()!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+timer
+{data:{"type":"exp","value":"5"}, message_type:message}
+scene_current_tag: game
+on_message(): {type:exp, value:5}
+we are emitting signal of exp!!!!!!!!!!!!!!!!!!!!!!!1
+_on_exp_changed()!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+_on_exp_changed()!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+_on_exp_changed()!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+_on_exp_changed()!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+{data:{"type":"exp","value":"10"}, message_type:message}
+scene_current_tag: game
+on_message(): {type:exp, value:10}
+we are emitting signal of exp!!!!!!!!!!!!!!!!!!!!!!!1
+_on_exp_changed()!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+_on_exp_changed()!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+_on_exp_changed()!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+_on_exp_changed()!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+{data:{"type":"health","value":"95"}, message_type:message}
+scene_current_tag: game
+on_message(): {type:health, value:95}
+emitting health changed
+_on_health_changed()!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+_on_health_changed()!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+_on_health_changed()!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+_on_health_changed()!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+{data:{"type":"exp","value":"15"}, message_type:message}
+scene_current_tag: game
+on_message(): {type:exp, value:15}
+we are emitting signal of exp!!!!!!!!!!!!!!!!!!!!!!!1
+_on_exp_changed()!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+_on_exp_changed()!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+_on_exp_changed()!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+_on_exp_changed()!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+{data:{"type":"exp","value":"20"}, message_type:message}
+scene_current_tag: game
+on_message(): {type:exp, value:20}
+we are emitting signal of exp!!!!!!!!!!!!!!!!!!!!!!!1
+_on_exp_changed()!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+_on_exp_changed()!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+_on_exp_changed()!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+_on_exp_changed()!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+{data:{"type":"exp","value":"25"}, message_type:message}
+scene_current_tag: game
+on_message(): {type:exp, value:25}
+we are emitting signal of exp!!!!!!!!!!!!!!!!!!!!!!!1
+_on_exp_changed()!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+_on_exp_changed()!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+_on_exp_changed()!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+_on_exp_changed()!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+{data:{"type":"exp","value":"30"}, message_type:message}
+scene_current_tag: game
+on_message(): {type:exp, value:30}
+we are emitting signal of exp!!!!!!!!!!!!!!!!!!!!!!!1
+_on_exp_changed()!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+_on_exp_changed()!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+_on_exp_changed()!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+_on_exp_changed()!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+{data:{"type":"exp","value":"35"}, message_type:message}
+scene_current_tag: game
+on_message(): {type:exp, value:35}
+we are emitting signal of exp!!!!!!!!!!!!!!!!!!!!!!!1
+_on_exp_changed()!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+_on_exp_changed()!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+_on_exp_changed()!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+_on_exp_changed()!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+timer
+{data:{"type":"exp","value":"40"}, message_type:message}
+scene_current_tag: game
+on_message(): {type:exp, value:40}
+we are emitting signal of exp!!!!!!!!!!!!!!!!!!!!!!!1
+_on_exp_changed()!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+_on_exp_changed()!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+_on_exp_changed()!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+_on_exp_changed()!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+{data:{"type":"exp","value":"45"}, message_type:message}
+scene_current_tag: game
+on_message(): {type:exp, value:45}
+we are emitting signal of exp!!!!!!!!!!!!!!!!!!!!!!!1
+_on_exp_changed()!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+_on_exp_changed()!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+_on_exp_changed()!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+_on_exp_changed()!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+{data:{"type":"exp","value":"50"}, message_type:message}
+scene_current_tag: game
+on_message(): {type:exp, value:50}
+we are emitting signal of exp!!!!!!!!!!!!!!!!!!!!!!!1
+_on_exp_changed()!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+_on_exp_changed()!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+_on_exp_changed()!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+_on_exp_changed()!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+{data:{"type":"exp","value":"55"}, message_type:message}
+scene_current_tag: game
+on_message(): {type:exp, value:55}
+we are emitting signal of exp!!!!!!!!!!!!!!!!!!!!!!!1
+_on_exp_changed()!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+_on_exp_changed()!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+_on_exp_changed()!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+_on_exp_changed()!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+{data:{"type":"exp","value":"60"}, message_type:message}
+scene_current_tag: game
+on_message(): {type:exp, value:60}
+we are emitting signal of exp!!!!!!!!!!!!!!!!!!!!!!!1
+_on_exp_changed()!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+_on_exp_changed()!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+_on_exp_changed()!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+_on_exp_changed()!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+{data:{"type":"exp","value":"65"}, message_type:message}
+scene_current_tag: game
+on_message(): {type:exp, value:65}
+we are emitting signal of exp!!!!!!!!!!!!!!!!!!!!!!!1
+_on_exp_changed()!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+_on_exp_changed()!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+_on_exp_changed()!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+_on_exp_changed()!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+{data:{"type":"exp","value":"70"}, message_type:message}
+scene_current_tag: game
+on_message(): {type:exp, value:70}
+we are emitting signal of exp!!!!!!!!!!!!!!!!!!!!!!!1
+_on_exp_changed()!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+_on_exp_changed()!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+_on_exp_changed()!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+_on_exp_changed()!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+{data:{"type":"exp","value":"75"}, message_type:message}
+scene_current_tag: game
+on_message(): {type:exp, value:75}
+we are emitting signal of exp!!!!!!!!!!!!!!!!!!!!!!!1
+_on_exp_changed()!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+_on_exp_changed()!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+_on_exp_changed()!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+_on_exp_changed()!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+{data:{"type":"exp","value":"80"}, message_type:message}
+scene_current_tag: game
+on_message(): {type:exp, value:80}
+we are emitting signal of exp!!!!!!!!!!!!!!!!!!!!!!!1
+_on_exp_changed()!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+_on_exp_changed()!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+_on_exp_changed()!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+_on_exp_changed()!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+{data:{"type":"exp","value":"85"}, message_type:message}
+scene_current_tag: game
+on_message(): {type:exp, value:85}
+we are emitting signal of exp!!!!!!!!!!!!!!!!!!!!!!!1
+_on_exp_changed()!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+_on_exp_changed()!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+_on_exp_changed()!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+_on_exp_changed()!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+{data:{"type":"exp","value":"90"}, message_type:message}
+scene_current_tag: game
+on_message(): {type:exp, value:90}
+we are emitting signal of exp!!!!!!!!!!!!!!!!!!!!!!!1
+_on_exp_changed()!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+_on_exp_changed()!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+_on_exp_changed()!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+_on_exp_changed()!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+{data:{"type":"exp","value":"95"}, message_type:message}
+scene_current_tag: game
+on_message(): {type:exp, value:95}
+we are emitting signal of exp!!!!!!!!!!!!!!!!!!!!!!!1
+_on_exp_changed()!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+_on_exp_changed()!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+_on_exp_changed()!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+_on_exp_changed()!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+{data:{"type":"exp","value":"100"}, message_type:message}
+scene_current_tag: game
+on_message(): {type:exp, value:100}
+card 1 generated
+card 2 generated
+card 3 generated
+[{description:Увеличить кол-во электронов, id:205, name:Орбитальное деление, tag:aroud, type:upgrade}, {description:Уменьшить скорость врагов, id:701, name:Пониженная температура, tag:freeze, type:buff}, {description:Увеличить максимальное здоровье, id:901, name:Увеличение массы, tag:health, type:buff}]
+ 
+ 
+WARNING: Loaded resource as image file, this will not work on export: 'res://assets/cards/icons/icon205.png'. Instead, import the image file as an Image resource and load it normally as a resource.
+   at: load (core/image.cpp:2063) - Loaded resource as image file, this will not work on export: 'res://assets/cards/icons/icon205.png'. Instead, import the image file as an Image resource and load it normally as a resource.
+texture[ImageTexture:3602]
+WARNING: Loaded resource as image file, this will not work on export: 'res://assets/cards/icons/icon701.png'. Instead, import the image file as an Image resource and load it normally as a resource.
+   at: load (core/image.cpp:2063) - Loaded resource as image file, this will not work on export: 'res://assets/cards/icons/icon701.png'. Instead, import the image file as an Image resource and load it normally as a resource.
+texture[ImageTexture:3604]
+WARNING: Loaded resource as image file, this will not work on export: 'res://assets/cards/icons/icon901.png'. Instead, import the image file as an Image resource and load it normally as a resource.
+   at: load (core/image.cpp:2063) - Loaded resource as image file, this will not work on export: 'res://assets/cards/icons/icon901.png'. Instead, import the image file as an Image resource and load it normally as a resource.
+texture[ImageTexture:3606]
+timer
+timer
+timer
+timer
+timer
+ERROR: Index p_index = -1 is out of bounds (size() = 28).
+   at: remove (./core/cowdata.h:158) - Index p_index = -1 is out of bounds (size() = 28).
+game scene is created!
+_on_health_changed()!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+_on_health_changed()!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+_on_health_changed()!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+_on_health_changed()!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+_on_health_changed()!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+timer
+timer
+timer
+timer
+timer
+timer
+timer
+timer
+timer
+timer
+timer
+timer
+timer
+timer
+timer
+timer
+timer
+timer
+timer
+timer
+timer
+timer
+timer
+timer
+{data:{"type":"exp","value":"0"}, message_type:message}
+scene_current_tag: game
+on_message(): {type:exp, value:0}
+we are emitting signal of exp!!!!!!!!!!!!!!!!!!!!!!!1
+_on_exp_changed()!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+_on_exp_changed()!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+_on_exp_changed()!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+_on_exp_changed()!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+_on_exp_changed()!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+timer
+timer
+timer
+timer
+timer
+timer
+timer
+timer
+timer
+timer
+timer
+timer
+timer
+timer
+timer
+timer
+timer
+timer
+{data:{"type":"exp","value":"0"}, message_type:message}
+scene_current_tag: game
+on_message(): {type:exp, value:0}
+we are emitting signal of exp!!!!!!!!!!!!!!!!!!!!!!!1
+_on_exp_changed()!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+_on_exp_changed()!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+_on_exp_changed()!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+_on_exp_changed()!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+_on_exp_changed()!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+timer
+timer
+timer
+timer
+timer
+timer
+timer
+timer
+timer
+timer
+timer
+timer
+timer
+timer
+timer
+timer
+timer
+timer
+timer
+timer
+timer
+timer
+timer
+timer
+timer
+timer
+timer
+timer
+timer
+timer
+timer
+timer
+timer
+timer
+timer
+timer
+timer
+timer
+timer
+timer
+timer
+timer
+timer
+timer
+timer
+timer
+timer
+timer
+timer
+timer
+timer
+timer
+timer
+timer
+timer
+timer
+timer
+timer
+timer
+timer
+timer
+timer
+timer
+timer
+timer
+timer
+timer
+timer
+timer
+timer
+timer
+timer
+timer
+timer
+timer
+timer
+timer
+timer
+timer
+timer
+timer
+timer
+timer
+timer
+timer
+timer
+timer
+timer
+timer
+timer
+timer
+timer
+timer
+timer
+timer
+timer
+timer
+timer
+timer
+timer
+timer
+timer
+timer
+timer
+timer
+timer
+timer
+timer
+timer
+timer
+timer
+timer
+timer
+timer
+timer
+timer
+timer
+timer
+timer
+timer
+timer
+timer
+timer
+timer
+timer
+timer
+timer
+timer
+timer
+timer
+timer
+timer
+timer
+timer
+{data:0, message_type:server_state}
+ERROR: Condition "_first != nullptr" is true.
+   at: ~List (./core/self_list.h:108) - Condition "_first != nullptr" is true.
+ERROR: Condition "_first != nullptr" is true.
+   at: ~List (./core/self_list.h:108) - Condition "_first != nullptr" is true.
+ERROR: Condition "_first != nullptr" is true.
+   at: ~List (./core/self_list.h:108) - Condition "_first != nullptr" is true.
+WARNING: ObjectDB instances leaked at exit (run with --verbose for details).
+   at: cleanup (core/object.cpp:2070) - ObjectDB instances leaked at exit (run with --verbose for details).
+ERROR: Resources still in use at exit (run with --verbose for details).
+   at: clear (core/resource.cpp:417) - Resources still in use at exit (run with --verbose for details).
+ERROR: There are still MemoryPool allocs in use at exit!
+   at: cleanup (core/pool_vector.cpp:63) - Condition "allocs_used > 0" is true.
